@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Subscribe Button</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        .center-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  
+            background-color: #111827; /* Tailwind's gray-900 */
+            font-family: 'Inter', sans-serif;
+        }
+
+        .subscribe-button{
+            display: flex;
+            align-items: center;
+            gap:12px;
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            border: none;
+            background-color: #ef4444; /* Tailwind's red-500 */
+            border-radius: 9999px; /* Full rounded */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+            animation: puls-glow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        .subscribe-button:hover{
+            background-color: #dc2626;
+            box-shadow: 0 6px 20px rgba(239,68,68,0.5);
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse-glow{
+            0%, 100%{
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+            }
+            50%{
+                box-shadow: 0 0 0 15px rgba(239, 68, 68, 0);
+            }
+        }
+
+        .bell-icon{
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="center-container">
+
+        <!--The Subscribe Button with Animation-->
+        <button class="subscribe-button">
+
+            <!--Inline SVG for a Notification bell icon-->
+        <svg class="bell-icon" viewBox="0 0 24 24">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        Subscribe now
+        </button>
+    </div>
+</body>
+</html>
